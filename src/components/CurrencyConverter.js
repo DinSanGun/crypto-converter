@@ -31,18 +31,13 @@ function CurrencyConverter() {
 
         const options = {
             method: 'GET',
-            url: 'https://alpha-vantage.p.rapidapi.com/query',
-            params: {from_currency: fromCurrency, function: 'CURRENCY_EXCHANGE_RATE', to_currency: toCurrency},
-            headers: {
-                'x-rapidapi-host': 'alpha-vantage.p.rapidapi.com',
-                'x-rapidapi-key': '17ff3e4814mshc938daf6033c41bp122323jsn5ff8d5bb376c'
-            }
+            url: 'https://www.alphavantage.co/query',
+            params: {from_currency: fromCurrency, function: 'CURRENCY_EXCHANGE_RATE', to_currency: toCurrency, apikey: '882C44XRJVNZK4EO'},
         };
 
         axios.request(options).then(function(response) {
             const exchangeRate= response.data['Realtime Currency Exchange Rate']['5. Exchange Rate'];
             setResult(fromAmount * exchangeRate);
-            console.log(result);
             setIsLoading(false);
 
         }).catch(function (error) {
