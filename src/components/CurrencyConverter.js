@@ -32,7 +32,12 @@ function CurrencyConverter() {
         const options = {
             method: 'GET',
             url: 'https://www.alphavantage.co/query',
-            params: {from_currency: fromCurrency, function: 'CURRENCY_EXCHANGE_RATE', to_currency: toCurrency, apikey: '882C44XRJVNZK4EO'},
+            params: {
+                function: 'CURRENCY_EXCHANGE_RATE',
+                from_currency: fromCurrency, 
+                to_currency: toCurrency, 
+                apikey: process.env.ALPHA_VANTAGE_KEY
+            }
         };
 
         axios.request(options).then(function(response) {
