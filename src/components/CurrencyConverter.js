@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-import Button from '@mui/material/Button';
-import LoadingButton from '@mui/lab/LoadingButton';
+import Fab from '@mui/material/Fab'; //Floating Action Button
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -17,8 +17,6 @@ function CurrencyConverter() {
     const [toCurrency, setToCurrency] = useState('BTC');
 
     const [fromAmount, setFromAmount] = useState(0);
-
-    // const [exchangeRate, setExchangeRate] = useState(0);
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -57,6 +55,7 @@ function CurrencyConverter() {
 
             <div className = 'header'><h1>Cryptocurrency Converter</h1></div>
 
+
             <div className = 'from'>Convert:</div>
             <div className = 'from'>                                    
                 <TextField
@@ -80,6 +79,7 @@ function CurrencyConverter() {
                 </Select>
             </div>
 
+
             <div className = 'to'>To:</div>
             <div className = 'to'>
                 <Select
@@ -91,30 +91,31 @@ function CurrencyConverter() {
                 </Select>
             </div>
 
-                <div className = 'buttonArea'>
-                    {!isLoading &&
-                        <Button 
-                            id = 'convertButton'
-                            onClick = {convert} 
-                            variant = 'contained'
-                            color = 'success'
-                            size = 'medium'>  
+
+            <div className = 'buttonArea'>
+                {!isLoading 
+                    ?   <Fab 
+                            id = 'convertButton' 
+                            variant="extended" 
+                            size="medium" 
+                            color="default" 
+                            aria-label="convert" 
+                            onClick={convert}
+                        >
                             Convert!
-                        </Button>
-                    }
-
-                    {isLoading &&
-                        <LoadingButton loading variant="outlined">
-                            Converto!
-                        </LoadingButton>
-                    }
-                </div>
-
-                <div className = 'result'>
-                    <h3>{result}</h3>
-                </div>
-
+                        </Fab>
+                    
+                    :   <CircularProgress color = "success" />
+                }
             </div>
+            
+
+
+            <div className = 'result'>
+                <h3>{result}</h3>
+            </div>
+
+        </div>
     );
 }
 

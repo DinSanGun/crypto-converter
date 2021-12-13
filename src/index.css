@@ -27,10 +27,9 @@ code {
 .currency-converter {
   border-radius: 25px;
   opacity: 80%;
-  background-color: rgb(165, 164, 164);
+  background-color: rgb(177, 175, 175);
   padding: 5%;
 }
-
 
 .container {
   display: grid;
@@ -65,9 +64,13 @@ code {
 #convertButton {
   margin: auto;
   width: 150px;
-  background-color: rgb(77, 209, 25);
+  background-color: rgb(84, 226, 28);
   color: black;
   font-weight: bold;
+}
+
+#convertButton:hover {
+  background-color: rgb(81, 255, 58);
 }
 
 .selectCurrency {
