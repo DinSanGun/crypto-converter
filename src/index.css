@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url("background.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
+  overflow: hidden;
 }
 
 code {
@@ -25,6 +26,7 @@ code {
 }
 
 .currency-converter {
+  margin: auto;
   border-radius: 25px;
   opacity: 80%;
   background-color: rgb(177, 175, 175);
@@ -37,17 +39,23 @@ code {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* @media screen and (max-width: 1084px) {
+    .from{
+      : space-evenly;
+    }
+} */
+
 .header {
   text-align: center;
   grid-column: 1 / -1;
 }
 
 .from {
-  margin: auto;
+ margin: auto 10px;
 }
 
 .to { 
-  margin: auto;
+  margin: auto 10px;
 }
 
 .buttonArea {

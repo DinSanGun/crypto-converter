@@ -20,7 +20,6 @@ function CurrencyConverter() {
 
     const [isLoading, setIsLoading] = useState(false);
 
-
     const [result, setResult] = useState(0);
 
     const convert = () => {
@@ -34,13 +33,13 @@ function CurrencyConverter() {
                 function: 'CURRENCY_EXCHANGE_RATE',
                 from_currency: fromCurrency, 
                 to_currency: toCurrency, 
-                apikey: process.env.ALPHA_VANTAGE_KEY
+                apikey: '882C44XRJVNZK4EO'    //process.env.ALPHA_VANTAGE_KEY
             }
         };
 
         axios.request(options).then(function(response) {
             const exchangeRate= response.data['Realtime Currency Exchange Rate']['5. Exchange Rate'];
-            setResult(fromAmount * exchangeRate);
+            setResult(Math.round(fromAmount * exchangeRate*100)/100);
             setIsLoading(false);
 
         }).catch(function (error) {
@@ -71,6 +70,7 @@ function CurrencyConverter() {
             </div>
             <div className = 'from'>
                 <Select
+                    
                     className = 'selectCurrency'
                     value = {fromCurrency}
                     onChange = {(event) => setFromCurrency(event.target.value)}
@@ -112,7 +112,7 @@ function CurrencyConverter() {
 
 
             <div className = 'result'>
-                <h3>{result}</h3>
+                <h2>{result}</h2>
             </div>
 
         </div>
