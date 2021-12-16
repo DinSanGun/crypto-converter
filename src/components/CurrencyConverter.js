@@ -33,7 +33,7 @@ function CurrencyConverter() {
                 function: 'CURRENCY_EXCHANGE_RATE',
                 from_currency: fromCurrency, 
                 to_currency: toCurrency, 
-                apikey: '882C44XRJVNZK4EO'    //process.env.ALPHA_VANTAGE_KEY
+                apikey: process.env.ALPHA_VANTAGE_KEY
             }
         };
 
