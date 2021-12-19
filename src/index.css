@@ -1,3 +1,9 @@
+html {
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden; 
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("background.jpg");
-  background-size: 100% 100%;
-  overflow: hidden;
 }
 
 code {
@@ -16,7 +19,7 @@ code {
 }
 
 .app {
-  width: 40%;
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
   padding: 50px;
@@ -26,33 +29,32 @@ code {
 }
 
 .currency-converter {
-  margin: auto;
+  width: 100%;
+  margin: 0;
   border-radius: 25px;
   opacity: 80%;
   background-color: rgb(177, 175, 175);
   padding: 5%;
-}
-
-.container {
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: auto repeat(4, 1fr);
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* @media screen and (max-width: 1084px) {
-    .from{
-      : space-evenly;
-    }
-} */
-
 .header {
   text-align: center;
+  width: 100%;
+  padding-bottom: 3%;
   grid-column: 1 / -1;
+}
+
+#title {
+  display: inline;
 }
 
 .from {
  margin: auto 10px;
 }
+
 
 .to { 
   margin: auto 10px;
@@ -83,4 +85,53 @@ code {
 
 .selectCurrency {
   width: 150px;
+}
+@media screen and (max-width: 2000px) {
+  .app {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .app {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .app {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .app {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .app {
+    width: 80%;
+  }
+  .currency-converter{
+    grid-template-rows: repeat(9, auto);
+    grid-template-columns: auto;
+    row-gap: 15px;
+    padding: 10px 30px;
+  }
+  .from {
+    width: 100%;
+  }
+  .currency-amount {
+    width: 100%;
+  }
+  .to {
+    width: 100%;
+  }
+  .selectCurrency {
+    width: 100%;
+  }
+  .result {
+    display: inline-block;
+  }
 }

@@ -50,9 +50,9 @@ function CurrencyConverter() {
 
 
     return (
-        <div className = 'currency-converter container'>
+        <div className = 'currency-converter'>
 
-            <div className = 'header'><h1>Cryptocurrency Converter</h1></div>
+            <div className = 'header'><h1 id='title'>Cryptocurrency Converter</h1></div>
 
 
             <div className = 'from'>Convert:</div>
@@ -61,7 +61,7 @@ function CurrencyConverter() {
                     name    = 'currency-amount'
                     value   = {fromAmount}
                     onChange = {(event) => setFromAmount(event.target.value)}
-                    id = 'outlined-number'
+                    className = 'currency-amount'
                     type = "number"
                     InputLabelProps={{
                         shrink: true,
