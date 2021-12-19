@@ -1,2 +1,3 @@
 ## A simple cryptocurrency converter web app
-Link - http://DinSanGun.github.io/crypto-converter
+### Deployed with Heroku
+Link - https://cryptocurrency-converter-app.herokuapp.com/
