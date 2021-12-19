@@ -11,7 +11,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 function CurrencyConverter() {
 
-    console.log(process);
+    console.log(process.env);
 
     const currencies = ['ADA', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'EUR', 'ILS', 'JPY', 'LTC', 'SOL', 'USD', 'XRP'];
 
@@ -35,7 +35,7 @@ function CurrencyConverter() {
                 function: 'CURRENCY_EXCHANGE_RATE',
                 from_currency: fromCurrency, 
                 to_currency: toCurrency, 
-                apikey: process.env.ALPHA_VANTAGE_KEY
+                apikey: process.env.REACT_APP_ALPHA_VANTAGE_KEY
             }
         };
 
